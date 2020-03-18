@@ -8,6 +8,33 @@
 
 #include "hopper.hpp"
 
+//MARK:- ERROR
+class Error
+{
+public:
+    std::string m_name;
+    std::string m_details;
+public:
+    Error(std::string name, std::string details = "") {
+        m_name = name;
+        m_details = details;
+    }
+    
+    std::string ToString() {
+        return "[" + m_name + "]: " + m_details;
+    }
+    
+};
+
+class IllegalCharacterError: public Error
+{
+public:
+    IllegalCharacterError(std::string details)
+    : Error("[Illegal Character Error] '" + details + "'")
+    {
+        // do something
+    }
+};
 
 //MARK:- TOKENS
 
@@ -92,6 +119,9 @@ public:
                 tokens.push_back(Token(TOKEN_RIGHT_PARANTHESIS));
             } else {
                 // Error
+                std::string chr = m_currChar;
+                Move();
+                return {};
             }
         }
         
