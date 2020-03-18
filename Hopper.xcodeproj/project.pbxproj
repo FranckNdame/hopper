@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5B20E5C12422911C00BC64B9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B20E5C02422911C00BC64B9 /* main.cpp */; };
-		5B20E5C92422948900BC64B9 /* hopper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B20E5C72422948900BC64B9 /* hopper.cpp */; };
+		5B20E5CC2422BA3F00BC64B9 /* run.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B20E5CA2422BA3F00BC64B9 /* run.cpp */; };
+		5B20E5D02422CB2400BC64B9 /* Lexer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B20E5CE2422CB2400BC64B9 /* Lexer.cpp */; };
+		5B20E5D32422CBA100BC64B9 /* Token.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B20E5D12422CBA100BC64B9 /* Token.cpp */; };
+		5B20E5D62422CBF400BC64B9 /* Error.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B20E5D42422CBF400BC64B9 /* Error.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,8 +29,14 @@
 /* Begin PBXFileReference section */
 		5B20E5BD2422911C00BC64B9 /* Hopper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Hopper; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B20E5C02422911C00BC64B9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		5B20E5C72422948900BC64B9 /* hopper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = hopper.cpp; sourceTree = "<group>"; };
-		5B20E5C82422948900BC64B9 /* hopper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = hopper.hpp; sourceTree = "<group>"; };
+		5B20E5CA2422BA3F00BC64B9 /* run.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = run.cpp; sourceTree = "<group>"; };
+		5B20E5CB2422BA3F00BC64B9 /* run.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = run.hpp; sourceTree = "<group>"; };
+		5B20E5CE2422CB2400BC64B9 /* Lexer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Lexer.cpp; sourceTree = "<group>"; };
+		5B20E5CF2422CB2400BC64B9 /* Lexer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Lexer.hpp; sourceTree = "<group>"; };
+		5B20E5D12422CBA100BC64B9 /* Token.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Token.cpp; sourceTree = "<group>"; };
+		5B20E5D22422CBA100BC64B9 /* Token.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Token.hpp; sourceTree = "<group>"; };
+		5B20E5D42422CBF400BC64B9 /* Error.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Error.cpp; sourceTree = "<group>"; };
+		5B20E5D52422CBF400BC64B9 /* Error.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Error.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +70,14 @@
 			isa = PBXGroup;
 			children = (
 				5B20E5C02422911C00BC64B9 /* main.cpp */,
-				5B20E5C72422948900BC64B9 /* hopper.cpp */,
-				5B20E5C82422948900BC64B9 /* hopper.hpp */,
+				5B20E5CA2422BA3F00BC64B9 /* run.cpp */,
+				5B20E5CB2422BA3F00BC64B9 /* run.hpp */,
+				5B20E5CE2422CB2400BC64B9 /* Lexer.cpp */,
+				5B20E5CF2422CB2400BC64B9 /* Lexer.hpp */,
+				5B20E5D12422CBA100BC64B9 /* Token.cpp */,
+				5B20E5D22422CBA100BC64B9 /* Token.hpp */,
+				5B20E5D42422CBF400BC64B9 /* Error.cpp */,
+				5B20E5D52422CBF400BC64B9 /* Error.hpp */,
 			);
 			path = Hopper;
 			sourceTree = "<group>";
@@ -124,8 +139,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B20E5CC2422BA3F00BC64B9 /* run.cpp in Sources */,
+				5B20E5D62422CBF400BC64B9 /* Error.cpp in Sources */,
+				5B20E5D32422CBA100BC64B9 /* Token.cpp in Sources */,
 				5B20E5C12422911C00BC64B9 /* main.cpp in Sources */,
-				5B20E5C92422948900BC64B9 /* hopper.cpp in Sources */,
+				5B20E5D02422CB2400BC64B9 /* Lexer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
