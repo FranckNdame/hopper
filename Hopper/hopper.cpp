@@ -7,6 +7,7 @@
 //
 
 #include "hopper.hpp"
+#include <optional>
 
 //MARK:- ERROR
 class Error
@@ -75,6 +76,7 @@ public:
     std::string m_text;
     signed int m_pos;
     std::string m_currChar;
+    IllegalCharacterError* m_error;
     
 public:
     Lexer(std::string text) {
@@ -119,7 +121,7 @@ public:
                 tokens.push_back(Token(TOKEN_RIGHT_PARANTHESIS));
             } else {
                 // Error
-                std::string chr = m_currChar;
+                setError(m_currChar);
                 Move();
                 return {};
             }
@@ -128,6 +130,11 @@ public:
         return tokens;
     }
     
+    IllegalCharacterError* getError() {
+        return m_error;
+    }
+    
+private:
     Token GenerateNumber() {
         std::string num = "";
         int dotCount = 0;
@@ -149,4 +156,21 @@ public:
         }
     }
     
+    void setError(std::string chr) {
+        (*m_error) = IllegalCharacterError(chr);
+    }
+    
 };
+
+
+//MARK:- RUN
+
+std::vector<Token> run(std::string text) {
+    Lexer lexer(text);
+    std::vector<Token> tokens = lexer.GenerateTokens();
+    IllegalCharacterError* error = lexer.getError();
+    if (error != nullptr) {
+        std::cout << error->ToString() << std::endl;
+    }
+    return tokens;
+}
