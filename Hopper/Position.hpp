@@ -17,8 +17,11 @@ public:
     int m_index;
     int m_lineNumber;
     int m_col;
+    std::string m_filename;
+    std::string m_filetxt;
 public:
-    Position(int index, int lineNumber, int col);
+    Position(int index, int lineNumber, int col, std::string filename, std::string filetxt);
+    Position();
     ~Position();
     void Advance(std::string currChar);
     Position Copy();

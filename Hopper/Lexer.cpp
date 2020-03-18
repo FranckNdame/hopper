@@ -22,12 +22,11 @@ std::string SPACETAB = " \t";
 
 //MARK:- LEXER
 
-Lexer::Lexer(std::string text) {
+Lexer::Lexer(std::string text, std::string filename) : m_pos(-1, 0, -1, filename, text) { // https://stackoverflow.com/questions/31488756/explicitly-initialize-member-which-does-not-have-a-default-constructor
     // text to be parsed by lexer
     m_text = text;
-    // current text position
-    m_pos = -1;
     m_currChar = "";
+    m_filename = filename;
     Move();
 }
 
@@ -35,9 +34,9 @@ Lexer::~Lexer() {}
 
 void Lexer::Move() {
     // Move to next char in text
-    m_pos++;
-    if (m_pos < m_text.length()) {
-        m_currChar = m_text[m_pos];
+    m_pos.Advance(m_currChar);
+    if (m_pos.m_index < m_text.length()) {
+        m_currChar = m_text[m_pos.m_index];
     } else {
         m_currChar = "";
     }
@@ -45,13 +44,14 @@ void Lexer::Move() {
 
 std::vector<Token> Lexer::GenerateTokens() {
     std::vector<Token> tokens;
+    
     while (m_currChar.size()) {
         if (SPACETAB.find(m_currChar) != std::string::npos) {
             // Ignore spaces and tabs
         } else if (DIGITS.find(m_currChar) != std::string::npos) {
             // Get Number
             tokens.push_back(GenerateNumber());
-            m_pos--;
+            m_pos.m_index--;
         } else if (m_currChar == "+") {
             tokens.push_back(Token(TOKEN_PLUS));
         } else if (m_currChar == "-") {
@@ -66,13 +66,13 @@ std::vector<Token> Lexer::GenerateTokens() {
             tokens.push_back(Token(TOKEN_RIGHT_PARANTHESIS));
         } else {
             // Error
-            setError(m_currChar);
+            Position posStart = m_pos.Copy();
+            setError(m_currChar, posStart);
             Move();
             return {};
         }
         Move();
     }
-    
     return tokens;
 }
 
@@ -102,7 +102,8 @@ Token Lexer::GenerateNumber() {
     }
 }
 
-void Lexer::setError(std::string chr) {
-    m_error = new Error("Illegal character", chr);
+void Lexer::setError(std::string chr, Position posStart) {
+    std::string details = "'" + chr + "' was not defined.";
+    m_error = new Error("Illegal character", posStart, m_pos, details);
 }
 

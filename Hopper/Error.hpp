@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <iostream>
+#include "Position.hpp"
 
 //MARK:- ERROR
 class Error
@@ -18,8 +19,10 @@ class Error
 public:
     std::string m_name;
     std::string m_details;
+    Position m_posStart;
+    Position m_posEnd;
 public:
-    Error(std::string name, std::string details = "");
+    Error(std::string name, Position posStart, Position posEnd, std::string details = "");
     ~Error();
     std::string ToString();
     

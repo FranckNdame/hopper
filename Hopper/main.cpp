@@ -13,7 +13,7 @@ int main(int argc, const char * argv[]) {
         std::cout << "hopper > ";
         std::string text;
         getline(std::cin, text);
-        std::vector<Token> tokens = run(text);
+        std::vector<Token> tokens = run(text, "<stdin>");
         for(int i=0; i<tokens.size();i++) {
             std::cout << tokens[i].ToString() << std::endl;
         }

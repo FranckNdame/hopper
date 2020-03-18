@@ -9,11 +9,10 @@
 #include "run.hpp"
 
 //MARK:- RUN
-std::vector<Token> run(std::string text) {
-    Lexer lexer(text);
+std::vector<Token> run(std::string text, std::string filename) {
+    Lexer lexer(text, filename);
     std::vector<Token> tokens = lexer.GenerateTokens();
-    std::cout << "Token length: " << tokens.size() << std::endl;
-    std::cout << "==============" << std::endl;
+
     Error* error = lexer.getError();
     if (error == nullptr) return tokens;
     std::cout << error->ToString() << std::endl;

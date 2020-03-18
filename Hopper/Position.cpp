@@ -8,12 +8,16 @@
 
 #include "Position.hpp"
 
-Position::Position(int index, int lineNumber, int col) {
+
+Position::Position(int index, int lineNumber, int col, std::string filename, std::string filetxt) {
     m_index = index;
     m_lineNumber = lineNumber;
     m_col = col;
+    m_filename = filename;
+    m_filetxt = filetxt;
 }
 
+Position::Position() {}
 Position::~Position() {}
 
 void Position::Advance(std::string currChar) {
@@ -26,5 +30,5 @@ void Position::Advance(std::string currChar) {
 }
 
 Position Position::Copy() {
-    return Position(m_index, m_lineNumber, m_col);
+    return Position(m_index, m_lineNumber, m_col, m_filename, m_filetxt);
 }

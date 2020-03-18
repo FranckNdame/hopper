@@ -11,17 +11,19 @@
 #include <vector>
 #include "Error.hpp"
 #include "Token.hpp"
+#include "Position.hpp"
 
 //MARK:- LEXER
 class Lexer {
 public:
     std::string m_text;
-    signed int m_pos;
+    Position m_pos;
     std::string m_currChar;
-    Error* m_error;
+    Error* m_error = nullptr;
+    std::string m_filename;
     
 public:
-    Lexer(std::string text);
+    Lexer(std::string text, std::string filename);
     ~Lexer();
     void Move();
     std::vector<Token> GenerateTokens();
@@ -29,7 +31,7 @@ public:
     
 private:
     Token GenerateNumber();
-    void setError(std::string chr);
+    void setError(std::string chr, Position posStart);
     
 };
 

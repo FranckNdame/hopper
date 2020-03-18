@@ -11,6 +11,6 @@
 
 #include "Lexer.hpp"
 
-std::vector<Token> run(std::string text);
+std::vector<Token> run(std::string text, std::string filename);
 
 #endif /* run_hpp */
