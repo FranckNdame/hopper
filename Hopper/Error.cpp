@@ -21,11 +21,5 @@ std::string Error::ToString() {
 }
 
 
-IllegalCharacterError::IllegalCharacterError(std::string details)
-: Error("[Illegal Character Error] '" + details + "'")
-{
-    // do something
-}
-
 
 

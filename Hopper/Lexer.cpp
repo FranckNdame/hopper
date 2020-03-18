@@ -76,7 +76,7 @@ std::vector<Token> Lexer::GenerateTokens() {
     return tokens;
 }
 
-IllegalCharacterError* Lexer::getError() {
+Error* Lexer::getError() {
     return m_error;
 }
 
@@ -103,6 +103,6 @@ Token Lexer::GenerateNumber() {
 }
 
 void Lexer::setError(std::string chr) {
-    (*m_error) = IllegalCharacterError(chr);
+    m_error = new Error("Illegal character", chr);
 }
 

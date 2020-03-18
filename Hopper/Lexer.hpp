@@ -18,14 +18,14 @@ public:
     std::string m_text;
     signed int m_pos;
     std::string m_currChar;
-    IllegalCharacterError* m_error;
+    Error* m_error;
     
 public:
     Lexer(std::string text);
     ~Lexer();
     void Move();
     std::vector<Token> GenerateTokens();
-    IllegalCharacterError* getError();
+    Error* getError();
     
 private:
     Token GenerateNumber();

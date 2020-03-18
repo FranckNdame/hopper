@@ -25,12 +25,6 @@ public:
     
 };
 
-class IllegalCharacterError: public Error
-{
-public:
-    IllegalCharacterError(std::string details);
-};
-
 
 
 #endif /* Error_hpp */

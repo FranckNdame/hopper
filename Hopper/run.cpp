@@ -14,8 +14,9 @@ std::vector<Token> run(std::string text) {
     std::vector<Token> tokens = lexer.GenerateTokens();
     std::cout << "Token length: " << tokens.size() << std::endl;
     std::cout << "==============" << std::endl;
-    IllegalCharacterError* error = lexer.getError();
+    Error* error = lexer.getError();
     if (error == nullptr) return tokens;
+    std::cout << error->ToString() << std::endl;
     return {};
 
 }

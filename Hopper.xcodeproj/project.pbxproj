@@ -12,6 +12,7 @@
 		5B20E5D02422CB2400BC64B9 /* Lexer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B20E5CE2422CB2400BC64B9 /* Lexer.cpp */; };
 		5B20E5D32422CBA100BC64B9 /* Token.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B20E5D12422CBA100BC64B9 /* Token.cpp */; };
 		5B20E5D62422CBF400BC64B9 /* Error.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B20E5D42422CBF400BC64B9 /* Error.cpp */; };
+		5B20E5D92422D91200BC64B9 /* Position.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B20E5D72422D91200BC64B9 /* Position.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,8 @@
 		5B20E5D22422CBA100BC64B9 /* Token.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Token.hpp; sourceTree = "<group>"; };
 		5B20E5D42422CBF400BC64B9 /* Error.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Error.cpp; sourceTree = "<group>"; };
 		5B20E5D52422CBF400BC64B9 /* Error.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Error.hpp; sourceTree = "<group>"; };
+		5B20E5D72422D91200BC64B9 /* Position.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Position.cpp; sourceTree = "<group>"; };
+		5B20E5D82422D91200BC64B9 /* Position.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Position.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,8 @@
 				5B20E5D22422CBA100BC64B9 /* Token.hpp */,
 				5B20E5D42422CBF400BC64B9 /* Error.cpp */,
 				5B20E5D52422CBF400BC64B9 /* Error.hpp */,
+				5B20E5D72422D91200BC64B9 /* Position.cpp */,
+				5B20E5D82422D91200BC64B9 /* Position.hpp */,
 			);
 			path = Hopper;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 			files = (
 				5B20E5CC2422BA3F00BC64B9 /* run.cpp in Sources */,
 				5B20E5D62422CBF400BC64B9 /* Error.cpp in Sources */,
+				5B20E5D92422D91200BC64B9 /* Position.cpp in Sources */,
 				5B20E5D32422CBA100BC64B9 /* Token.cpp in Sources */,
 				5B20E5C12422911C00BC64B9 /* main.cpp in Sources */,
 				5B20E5D02422CB2400BC64B9 /* Lexer.cpp in Sources */,
