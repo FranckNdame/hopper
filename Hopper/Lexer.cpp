@@ -46,13 +46,12 @@ void Lexer::Move() {
 std::vector<Token> Lexer::GenerateTokens() {
     std::vector<Token> tokens;
     while (m_currChar.size()) {
-        std::cout << "Text: " << m_currChar << std::endl;
         if (SPACETAB.find(m_currChar) != std::string::npos) {
             // Ignore spaces and tabs
-            
         } else if (DIGITS.find(m_currChar) != std::string::npos) {
             // Get Number
-            GenerateNumber();
+            tokens.push_back(GenerateNumber());
+            m_pos--;
         } else if (m_currChar == "+") {
             tokens.push_back(Token(TOKEN_PLUS));
         } else if (m_currChar == "-") {

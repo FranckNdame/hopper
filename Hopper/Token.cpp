@@ -16,7 +16,7 @@ Token::Token(std::string type, std::string value) {
 Token::~Token() {}
 
 std::string Token::ToString() {
-    if (m_value.size()) return m_type + ":" + m_type;
+    if (m_value.size()) return m_type + ": " + m_value;
     return m_type;
 }
 

@@ -14,10 +14,8 @@ int main(int argc, const char * argv[]) {
         std::string text;
         getline(std::cin, text);
         std::vector<Token> tokens = run(text);
-        std::cout << tokens.size() << std::endl;
         for(int i=0; i<tokens.size();i++) {
             std::cout << tokens[i].ToString() << std::endl;
-            std::cout << i << "<- index" << std::endl;
         }
  
     }
